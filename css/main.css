@@ -1,0 +1,199 @@
+a{
+    font-weight: normal;
+    font-size: 100%;
+    color: rgb(0, 0, 255);
+    text-decoration: none;
+}
+
+#logout{
+    text-align: right;
+    margin-right: 1em;
+}
+#loginuser{
+    padding-right: 1em;
+    border-right:1px solid black;
+}
+#page{
+    position:relative;
+    margin:0 auto;
+    width: 1000px;
+    min-height: 100%;
+    background: rgb(255, 255, 255);
+}
+#main_content{
+    padding: 20px 30px;
+}
+#title
+{
+text-align:left;
+
+padding: 0.5em 0 0 1em;
+//font-size: 1.8em;
+font-family: Georgia;
+font-style: oblique;
+font-weight: normal;
+color: #c41230;
+}
+#footer {
+    width:100%;
+    position:absolute;
+    bottom:0;
+    left:0;
+ }
+#footer p { 
+    text-align: center; 
+    font-style: italic; 
+    font-size: .9em;
+    margin:0;
+}
+
+#login-form{
+	width: 200px;
+	border: 10px solid #f0e3ad;
+	margin: 100px auto 0;
+	padding: 1em;
+	background: white;
+}
+h1,h2,h3,h4 {
+padding: 7px 0px 3px 0px;
+margin: 0px;
+font-size: 1.8em;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-style: oblique;
+font-weight: normal;
+color: #c41230;
+text-align: center;
+}
+#login-form input[type=text],input[type=password]{
+	display:block;
+	margin: 1em auto 1em;
+	width:80%;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+}
+#login-form input[type=submit]{
+    border:none;	
+    margin-left:10%;
+    padding:8px;
+    font-size: 15px;
+    color: white;
+    text-decoration:none;
+    background: #348075;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+}
+#login-form input[type=submit]:hover{
+	background: #287368;
+	cursor:pointer;
+}
+#committee_menu{
+    margin: 1em auto;
+}
+
+
+#typecell,th{
+    text-align: center;
+    font-weight: bold;
+    height: 35px;
+} 
+
+
+.form input[type="submit"]{
+    margin-top: 1em;
+}
+
+.form{
+    margin-left:100px; 
+}
+
+.form label{
+    float: left;
+    text-align: left;
+    width: 200px;
+    margin-right: 1em;
+}
+#mentoring-menu{
+    margin-left:100px;
+}
+#mentoring-menu a{
+    margin-right: 30px; 
+}
+#mentoring-menu a:hover{
+    border-bottom:solid;
+}
+#publication-list{
+    margin: 0 100px;
+    font-family: serif;
+}
+#publication-list p.year{
+    text-align: center;
+    font-weight: bold;
+}
+#publication-list p.type{
+    font-weight: bold;
+    
+}
+
+.course{
+    margin:0 100px;
+}
+.course legend{
+    font-weight: bold;
+}
+.course p#title2{
+
+    font-style: italic;
+}
+.course fieldset{
+    margin-bottom: 1em;
+}
+
+    .myButton {
+        
+        -moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+        background:-moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:-webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:-o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:-ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+        background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7',GradientType=0);
+        
+        background-color:#007dc1;
+        
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        
+        border:1px solid #124d77;
+        
+        display:inline-block;
+        color:#ffffff;
+        font-family:arial;
+        font-size:13px;
+        font-weight:normal;
+        padding:6px 24px;
+        text-decoration:none;
+        
+        text-shadow:0px 1px 0px #154682;
+        
+    }
+    .myButton:hover {
+        
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+        background:-moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:-webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:-o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:-ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+        background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1',GradientType=0);
+        
+        background-color:#0061a7;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }

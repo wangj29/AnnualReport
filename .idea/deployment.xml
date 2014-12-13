@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="ceclnx01" promptOnLocalOverwrite="false">
+    <serverData>
+      <paths name="ceclnx01">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/public_html/ds2" local="$PROJECT_DIR$" web="/~wangj29/ds2" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
+
