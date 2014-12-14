@@ -34,14 +34,14 @@ Class Committee_Model extends CI_Model{
     function get_faculty()
     {
         $this->db->order_by("user_name", "asc");
-        $query=$this->db->get('user');
+        $query=$this->db->get('users');
         return $query;
     }
   
     function get_fullname($uniqueid)
     {
         $this->db->where('user_id',$uniqueid);
-        $query=$this->db->get('user');
+        $query=$this->db->get('users');
         $row = $query->row();
         return $row->user_name;        
     }
