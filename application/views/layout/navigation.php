@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?=site_url("home")?>">Department Support System</a>
+        <a class="navbar-brand" href="<?=site_url("home")?>">Annual Report</a>
     </div>
     <!-- /.navbar-header -->
 

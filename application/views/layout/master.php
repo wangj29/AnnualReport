@@ -1,7 +1,7 @@
+<!-- Header -->
 <?php $this->load->view('layout/header');?>
 <!--start wrapper-->
-    <div class="container" id="wrapper">
-
+<div class="container" id="wrapper">
         <!--Navigation-->
         <?php $this->load->view('layout/navigation');?>
 

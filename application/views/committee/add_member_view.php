@@ -1,8 +1,8 @@
 <div id='add-member'>
 <h3>Add a new committee member</h3>
-	<form class="form-inline" role="form" method="post" action="<?=site_url('committee/add_member_submit');?>"/>
+	<form class="form-inline" role="form" method="post" action="add_member_submit"/>
 		<div class="form-group">
-			<label for="committee">Committee </lable>
+			<label for="committee">Committee </label>
 			<?php
 				$option=array();
 				$query=$this->committee_model->get_committee();
