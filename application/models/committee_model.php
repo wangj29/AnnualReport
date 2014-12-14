@@ -27,7 +27,11 @@ Class Committee_Model extends CI_Model{
 	function get_member($committee_name)
     {
         $this -> db -> where('committee_name', $committee_name);
-        $query = $this->db->get('committee_member');
+        $query = $this->db
+            ->select('users.user_id, users.user_name')
+            ->from('users')
+            ->join('committee_member AS com', 'users.user_id = com.member_name', 'left')
+            ->get();
         return $query;
     }
 	/*Get a list of faculities*/

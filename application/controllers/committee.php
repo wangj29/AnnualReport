@@ -80,14 +80,7 @@ class Committee extends Admin_Controller {
         $result = $this->committee_model->get_member($this->input->post('committee_name'))->result_array();
         $this->output->set_content_type('application_json');
         if ($result) {
-            $members = array();
-            foreach ($result as $mem) {
-                $members[] = array(
-                    'id' => $mem['member_name'],
-                    'name' => $mem['member_name']
-                );
-            }
-            $this->output->set_output(json_encode($members));
+            $this->output->set_output(json_encode($result));
         }
     }
    

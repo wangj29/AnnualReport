@@ -35,9 +35,8 @@ $(function(){
             data: postData,
             dataType: 'json',
             success: function(result){
-
                 var options = $.map(result, function(member, index){
-                    return $('<option value="' + member.id+ '">' + member.name + '</option>');
+                    return $('<option value="' + member.user_id+ '">' + member.user_name + '</option>');
                 });
                 $('select#member-name').attr('disabled',false).html(options);
             }
