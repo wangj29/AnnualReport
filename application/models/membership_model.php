@@ -3,7 +3,7 @@ Class Membership_Model extends CI_Model
 {
     function get($user_id){
         $this -> db -> where('user_id',$user_id);
-        $query = $this-> db -> get('user');
+        $query = $this-> db -> get('users');
         if($query -> num_rows() == 1) {
             return $query;
         }
@@ -11,7 +11,7 @@ Class Membership_Model extends CI_Model
     }
     function get_fullname($user_id){
         $this -> db -> where('user_id', $user_id);
-        return $this -> db -> get('user');
+        return $this -> db -> get('users');
     }
 
     function set_user($user_id, $user_name, $user_type){
@@ -20,6 +20,6 @@ Class Membership_Model extends CI_Model
             'user_name'=>$user_name,
             'user_type' =>$user_type
         );
-        $this->insert('user', $data);
+        $this->insert('users', $data);
     }
 }

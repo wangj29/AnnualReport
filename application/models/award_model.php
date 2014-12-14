@@ -42,7 +42,7 @@ Class Award_Model extends CI_Model{
     function get_fullname($uniqueid)
     {
         $this->db->where('user_id',$uniqueid);
-        $query=$this->db->get('user');
+        $query=$this->db->get('users');
         $row=$query->row();
         return $row->user_name;        
     }
@@ -50,14 +50,14 @@ Class Award_Model extends CI_Model{
     function get_ID($name)
     {
         $this->db->where('user_name',$name);
-        $query=$this->db->get('user');
+        $query=$this->db->get('users');
         $row=$query->row();
         return $row->user_id;        
     }
     function view_faculty()
     {
         $this->db->order_by("user_name", "asc");
-        $query=$this->db->get('user');
+        $query=$this->db->get('users');
         return $query;
     }
     function delete($userid, $type, $title, $year){

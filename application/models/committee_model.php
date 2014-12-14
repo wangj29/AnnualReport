@@ -40,7 +40,7 @@ Class Committee_Model extends CI_Model{
   
     function get_fullname($uniqueid)
     {
-        $this->db->where('user_id',$uniqueid);
+        $this->db->where('user_id', $uniqueid);
         $query=$this->db->get('users');
         $row = $query->row();
         return $row->user_name;        
