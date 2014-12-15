@@ -1,17 +1,17 @@
 <?php
 Class Membership_Model extends CI_Model
 {
-    function get($user_id){
-        $this -> db -> where('user_id',$user_id);
-        $query = $this-> db -> get('users');
+    function get_user($user_name = null){
+        if ($user_name == null) {
+            return $this->db->get('user');
+        }
+        $query = $this-> db
+            -> where('user_name', $user_name)
+            -> get('user');
         if($query -> num_rows() == 1) {
             return $query;
         }
         return false;
-    }
-    function get_fullname($user_id){
-        $this -> db -> where('user_id', $user_id);
-        return $this -> db -> get('users');
     }
 
     function set_user($user_id, $user_name, $user_type){

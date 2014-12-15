@@ -6,17 +6,22 @@
         <?php $this->load->view('layout/navigation');?>
 
         <!--Page-->
-        <div class="container" id="page-wrapper">
+        <!--Page Header-->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12 page-header">
+                    <!--Title -->
+                    <h1 ><?=$title?></h1>
+                    <!--Breadcrumb-->
+                    <?php echo set_breadcrumb(); ?>
+                </div>
+            </div>
 
-            <!--Breadcrumb-->
-            <?php echo set_breadcrumb(); ?>
 
             <!--Main Content-->
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="main_content">
-                        <?php $this->load->view($main_content);?>
-                    </div>
+                    <?php $this->load->view($main_content);?>
                 </div>
             </div>
         </div>

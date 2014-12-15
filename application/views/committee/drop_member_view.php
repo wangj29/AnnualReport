@@ -1,44 +1,47 @@
-<h3>Drop a Committee Member</h3>
-<?php echo form_open('committee/drop_member_submit');?>
+<form class="form-inline" role="form" method="post" action="drop_member_submit">
+    <div class="form-group">
+        <label class="sr-only" for="committee_name" >Committee</label>
+        <select class="form-control" name="committee_name" required>
+            <option value="">Select A Committee</option>
+            <?php
+                $committee_list = $this->committee_model->get_committee();
+                foreach ($committee_list->result() as $row){ ?>
+                    <option value="<?=$row->committee_name?>"><?=$row->committee_name?></option>
+                <?
+                }
+            ?>
+        </select>
+    </div>
 
-<?php
-    //first dropdown menu
-    $committee_list = $this->committee_model->get_committee();
-    $option = array();
-    $option[""]="Select a committee";
-
-    foreach ($committee_list->result() as $row){ 
-        $option[$row->committee_name] = $row->committee_name;
-    }
-    $id = 'id="committee-name"';
-    echo form_dropdown('committee_name',$option,'""',$id);
-    
-    //second dropdown menu
-    $option = array();
-    $option[""] = "Select a member";
-    $id = 'id="member-name" disabled=true';
-    echo form_dropdown('member_name', $option,'""',$id);
-?>
-<!--<select id="committee-member" name="committee_member" disabled=true></select>-->
-
-<?php echo form_submit('submit', 'Submit'); ?>
+    <div class="form-group">
+        <label class="sr-only" for="committee_member" >Member</label>
+        <select class="form-control" name="committee_member" required disabled>
+            <option value="">Select a Member</option>
+        </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </form>
 <!--end of form -->
 
 <script type="text/javascript">
 $(function(){
-    var url = '<?php echo site_url('committee/show_member_query'); ?>';
-    $("#committee-name").change(function(){
+    var url = 'show_member_query';
+    $('select[name="committee_name"]').change(function(){
         var postData = $(this).serialize();
         $.ajax(url, {
             type: "POST",
             data: postData,
             dataType: 'json',
             success: function(result){
-                var options = $.map(result, function(member, index){
-                    return $('<option value="' + member.user_id+ '">' + member.user_name + '</option>');
-                });
-                $('select#member-name').attr('disabled',false).html(options);
+                if (result.length > 0) {
+                    var options = "";
+                    for(var i = 0; i < result.length; i++) {
+                        options += '<option value="' + result[i].member_id + '">' + result[i].member_name + '</option>';
+                    }
+                    $('select[name="committee_member"]').attr('disabled',false).html(options);
+                } else {
+                    $('select[name="committee_member"]').attr('disabled',true).html("<option value>Select a Member</option>")
+                }
             }
             });
         // End of ajax call

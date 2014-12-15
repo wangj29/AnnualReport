@@ -1,4 +1,3 @@
-<h3>Drop a Committee Position</h3>
 <?php echo form_open('committee/drop_committee_submit');?>
 
 <?php

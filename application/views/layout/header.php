@@ -11,9 +11,6 @@
     <!-- MetisMenu CSS -->
     <link href="<?=base_url()?>css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- SB-admin Custom CSS -->
-    <link href="<?=base_url()?>css/sb-admin-2.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="<?=base_url()?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -22,6 +19,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?=base_url()?>js/bootstrap.min.js"></script>
+    
+    <!-- SB-admin Custom CSS -->
+    <link href="<?=base_url()?>css/sb-admin-2.css" rel="stylesheet">
 
     <!--Main CSS-->
 <!--   <link href = css/main.css" rel="stylesheet">-->

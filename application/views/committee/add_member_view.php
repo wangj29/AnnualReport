@@ -1,36 +1,35 @@
-<div id='add-member'>
-<h3>Add a new committee member</h3>
-	<form class="form-inline" role="form" method="post" action="add_member_submit"/>
-		<div class="form-group">
-			<label for="committee">Committee </label>
+<form class="form-inline" role="form" method="post" action="add_member_submit">
+	<div class="form-group">
+		<label for="committee">Committee </label>
+		<select name="committee_name" class="form-control" >
 			<?php
-				$option=array();
-				$query=$this->committee_model->get_committee();
-				foreach( $query->result() as $committee) {
-					$option[$committee->committee_name]=$committee->committee_name;
-				}
-				echo form_dropdown('committee_name',$option, 'class="form-control"');
+				$query = $this->committee_model->get_committee();
+				foreach( $query->result() as $committee)  {?>
+					<option value="<?=$committee->committee_name?>"> <?=$committee->committee_name?></option>
+				<?php }
 			?>
-		</div>
-		<div class="form-group">
-			<label for="faculty">Faculty</label>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="faculty"> Faculty </label>
+		<select name="faculty" class="form-control" >
 			<?php
-				$option=array();
-				$query = $this->committee_model->get_faculty();
-				foreach( $query->result() as $faculty){
-					$option[$faculty->user_id]=$faculty->user_name;
+				$query = $this->membership_model->get_user();
+				foreach($query->result() as $user)  {?>
+					<option value="<?=$user->user_id?>"> <?=$user->user_fullname?></option>
+				<?php
 				}
-				echo form_dropdown('faculty',$option,'class="form-control"');
 			?>
-		</div>
-		<div class="checkbox">
-			<label for="member">Member</label>		
-			<?= form_radio('is_chair', '0',TRUE);?>
-		</div>
-		<div class="checkbox">
-			<label for="chair">Chair</label>			
-			<?=form_radio('is_chair', '1',FALSE);?>
-		</div>
-	<button type="submit" class="btn btn-default">Add</button>
-	</form>
-</div>
+		</select>
+	</div>
+	<div class="checkbox">
+		<label for="member">Member</label>
+		<?= form_radio('is_chair', '0',TRUE);?>
+	</div>
+	<div class="checkbox">
+		<label for="chair">Chair</label>
+		<?=form_radio('is_chair', '1',FALSE);?>
+	</div>
+<button type="submit" class="btn btn-default">Add</button>
+</form>
