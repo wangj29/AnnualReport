@@ -29,7 +29,7 @@ class Publication extends MY_Member_Controller {
     }
     function submit()
     {
-        
+
         if ($this->session->userdata('type')==='admin')
         {
             $author=$this->input->post('author');

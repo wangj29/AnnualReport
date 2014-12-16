@@ -1,5 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
-class Award extends MY_Member_Controller {
+class Award extends MY_Member_Controller
+{
     function __construct()
     {
       parent::__construct();
