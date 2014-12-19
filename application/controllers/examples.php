@@ -6,17 +6,28 @@ class Examples extends CI_Controller {
 	{
 		parent::__construct();
 
-		$this->load->database();
-		$this->load->helper('url');
-
 		$this->load->library('grocery_CRUD');
 	}
 
-	public function _example_output($output = null)
+	private function _example_output($output = null)
 	{
 		$this->load->view('example.php',$output);
 	}
 
+	public function full_example()
+	{
+		$crud = new grocery_CRUD();
+
+		$crud->set_table('user')
+			->set_subject('User')
+			->columns('user_name','first_name','last_name');
+
+		$crud->fields('user_name','first_name','last_name')
+			->required_fields('user_name', 'first_name', 'last_name');
+
+		$output = $crud->render();
+		$this->_example_output($output);
+	}
 	public function offices()
 	{
 		$output = $this->grocery_crud->render();
