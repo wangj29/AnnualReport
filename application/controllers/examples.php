@@ -14,7 +14,9 @@ class Examples extends CI_Controller {
 		$this->load->view('example.php',$output);
 	}
 
-	public function full_example()
+	/*---------------------------------------------------------------------------------------------*/
+
+	public function user()
 	{
 		$crud = new grocery_CRUD();
 
@@ -28,12 +30,29 @@ class Examples extends CI_Controller {
 		$output = $crud->render();
 		$this->_example_output($output);
 	}
-	public function offices()
-	{
-		$output = $this->grocery_crud->render();
 
+
+	/*---------------------------------------------------------------------------------------------*/
+
+	public function committee()
+	{
+		$crud = new grocery_CRUD();
+		$crud->set_table('committee')
+			->set_subject('Committee')
+			->set_relation('type_id', 'committee_type', 'type_name');
+
+		$crud->unset_columns('last_edit')
+			->display_as('type_id', 'Committee Type');
+
+		$crud->unset_fields('last_edit')
+			->required_fields('type_id', 'committee');
+
+		$output = $crud->render();
 		$this->_example_output($output);
 	}
+
+
+	/*---------------------------------------------------------------------------------------------*/
 
 	public function index()
 	{
